@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file>Error.qml</file>
+        <file>Fatal.qml</file>
+        <file>RecipeControl.qml</file>
+        <file>RecipeGui.qml</file>
+        <file>RecipeInfo.qml</file>
+        <file>RecipeModules.qml</file>
+        <file>RecipeStatus.qml</file>
+        <file>SessionDialogDut.qml</file>
+        <file>SessionDialogStart.qml</file>
+        <file>SessionDialogStop.qml</file>
+    </qresource>
+</RCC>

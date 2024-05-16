@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/FilterWheel">
+        <file>image/down_arrow.png</file>
+    </qresource>
+</RCC>

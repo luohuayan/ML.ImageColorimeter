@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ROISetting</class>
+ <widget class="QWidget" name="ROISetting">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>406</width>
+    <height>309</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RoiSetting</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="2" colspan="2">
+    <widget class="QSlider" name="height_slider">
+     <property name="styleSheet">
+      <string notr="true">QSlider::groove:horizontal{border: 0px solid #ff0000;height:4px;}
+QSlider::sub-page:horizontal{background: #2F89FC;border-radius: 2px;}
+QSlider::add-page:horizontal{background: #FFFFFF;border-radius: 2px;}
+QSlider::handle:horizontal{background:#FFFFFF;border: 1px solid #666666;border-radius:8px;width:18px;height:18px;margin-top:-6px;margin-bottom: -6px;}</string>
+     </property>
+     <property name="maximum">
+      <number>800</number>
+     </property>
+     <property name="value">
+      <number>55</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>9ROIs Offset:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QSpinBox" name="offset_spin">
+     <property name="maximum">
+      <number>800</number>
+     </property>
+     <property name="value">
+      <number>400</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="2">
+    <widget class="QSlider" name="width_slider">
+     <property name="styleSheet">
+      <string notr="true">QSlider::groove:horizontal{border: 0px solid #ff0000;height:4px;}
+QSlider::sub-page:horizontal{background: #2F89FC;border-radius: 2px;}
+QSlider::add-page:horizontal{background: #FFFFFF;border-radius: 2px;}
+QSlider::handle:horizontal{background:#FFFFFF;border: 1px solid #666666;border-radius:8px;width:18px;height:18px;margin-top:-6px;margin-bottom: -6px;}</string>
+     </property>
+     <property name="maximum">
+      <number>800</number>
+     </property>
+     <property name="value">
+      <number>55</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Width/Radius：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2" colspan="2">
+    <widget class="QSlider" name="offset_slider">
+     <property name="styleSheet">
+      <string notr="true">QSlider::groove:horizontal{border: 0px solid #ff0000;height:4px;}
+QSlider::sub-page:horizontal{background: #2F89FC;border-radius: 2px;}
+QSlider::add-page:horizontal{background: #FFFFFF;border-radius: 2px;}
+QSlider::handle:horizontal{background:#FFFFFF;border: 1px solid #666666;border-radius:8px;width:18px;height:18px;margin-top:-6px;margin-bottom: -6px;}</string>
+     </property>
+     <property name="maximum">
+      <number>800</number>
+     </property>
+     <property name="value">
+      <number>400</number>
+     </property>
+     <property name="sliderPosition">
+      <number>400</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Height：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Outline Color：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="3">
+    <widget class="QPushButton" name="revertbtn">
+     <property name="text">
+      <string>Revert</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2">
+    <widget class="QPushButton" name="applybtn">
+     <property name="text">
+      <string>Apply</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QSpinBox" name="width_spin">
+     <property name="maximum">
+      <number>800</number>
+     </property>
+     <property name="value">
+      <number>55</number>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="3">
+    <widget class="QPushButton" name="colorbtn">
+     <property name="styleSheet">
+      <string notr="true">QPushButton{background-color:rgb(0,255,255);}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QSpinBox" name="height_spin">
+     <property name="maximum">
+      <number>800</number>
+     </property>
+     <property name="value">
+      <number>55</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>ROI Shape</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="3">
+    <widget class="QComboBox" name="shapecBox">
+     <item>
+      <property name="text">
+       <string>Rectangle</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Circle</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ellipse</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

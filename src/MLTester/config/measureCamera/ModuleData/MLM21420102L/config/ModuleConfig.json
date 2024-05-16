@@ -1,0 +1,54 @@
+{
+	"SerialNumber": "MLM21420102L",
+	"FocalLength": 432.0,
+	"FocalPlanesObjectSpace": 3.43,
+	"LensMotion": {
+		"Enable": 1,
+		"Type": "PI",
+		"LensFocus": {
+			"FocusMax": 5000,
+			"FocusMin": 240,
+			"ReferencePosition": 828
+		},
+		"IsReverse": false
+	},
+	"CameraMotion": {
+		"Enable": 1,
+		"Type": "PI",
+		"CameraFocus": {
+			"FocusMax": 14000,
+			"FocusMin": 4500,
+			"ReferencePosition": 10960
+		}
+	},
+	"Filter": {
+		"Enable": 1,
+		"Type": "AR",
+		"ND": {
+			"Enable": 1,
+			"Type": "AR",
+			"ID": 1
+		},
+		"XYZ": {
+			"Enable": 1,
+			"Type": "AR",
+			"ID": 2
+		},
+		"Cylinder": {
+			"Enable": 1,
+			"Type": "AR",
+			"ID": 3
+		}
+	},
+	"CylindricalMirror": {
+		"Enable": 1,
+		"Type": "TMCL",
+		"ID": 4,
+		"PulsePerCycle": 28333,
+		"ReferencePosition": 0
+	},
+	"Camera": {
+		"Enable": 1,
+		"Type": "Matrox"
+	}
+}

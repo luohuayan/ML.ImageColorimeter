@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>images/Save.png</file>
+        <file>images/1_1.png</file>
+        <file>images/Center.png</file>
+        <file>images/Grid.png</file>
+        <file>images/LineCut.png</file>
+        <file>images/Move.png</file>
+        <file>images/RGB.png</file>
+        <file>images/ROI.png</file>
+        <file>images/ROI-9.png</file>
+        <file>images/Settings.png</file>
+        <file>images/ZoomIn.png</file>
+        <file>images/ZoomOut.png</file>
+        <file>images/selection.png</file>
+        <file>images/1_1_w.png</file>
+        <file>images/Center_w.png</file>
+        <file>images/Grid_w.png</file>
+        <file>images/LineCut_w.png</file>
+        <file>images/Move_w.png</file>
+        <file>images/ROI_w.png</file>
+        <file>images/ROI-9_w.png</file>
+        <file>images/Save_w.png</file>
+        <file>images/selection_w.png</file>
+        <file>images/ZoomIn_w.png</file>
+        <file>images/ZoomOut_w.png</file>
+    </qresource>
+</RCC>

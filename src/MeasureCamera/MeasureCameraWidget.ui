@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MeasureWidgetClass</class>
+ <widget class="QWidget" name="MeasureWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>994</width>
+    <height>577</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MeasureCameraWidget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,3,2,8">
+     <property name="leftMargin">
+      <number>11</number>
+     </property>
+     <property name="rightMargin">
+      <number>11</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="connectAll">
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 9pt;
+    color: #2f3640;
+    background-color:#d5e6ed;
+    border-color: #2f3640;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+QPushButton::pressed,QPushButton::checked{
+    background-color: #f5f6fa;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Connect Camera</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeAll">
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 9pt;
+    color: #2f3640;
+    background-color:#d5e6ed;
+    border-color: #2f3640;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+QPushButton::pressed,QPushButton::checked{
+    background-color: #f5f6fa;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Disconnect Camera</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="loadImage">
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 9pt;
+    color: #2f3640;
+    background-color:#d5e6ed;
+    border-color: #2f3640;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+QPushButton::pressed,QPushButton::checked{
+    background-color: #f5f6fa;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Load Image</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,1">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Connection Status：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="connectStatus">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QCheckBox" name="liveImg_Btn">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::RightToLeft</enum>
+           </property>
+           <property name="text">
+            <string>Live Image</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGraphicsView" name="cameraViwer">
+         <property name="backgroundBrush">
+          <brush brushstyle="NoBrush">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

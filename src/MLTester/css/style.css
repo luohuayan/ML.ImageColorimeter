@@ -1,0 +1,181 @@
+﻿* {
+    outline: 0px;
+    color: #DCDCDC;
+    background: #444444;
+}
+
+QTableView {
+    border: 1px solid #242424;
+    selection-background-color: #646464;
+    selection-color: #DCDCDC;
+    alternate-background-color: #525252;
+    gridline-color: #242424;
+}
+
+QTableView::indicator {
+    padding: 0px 0px 0px 0px;
+    width: 15px;
+    height: 15px;
+}
+
+QTableView::indicator:unchecked {
+    image:url(:/Gen2WGMTFTester/images/Table/checkbox_unchecked.png);
+}
+
+QTableView::indicator:unchecked:disabled {
+    image:url(:/Gen2WGMTFTester/images/Table/checkbox_unchecked_disable.png);
+}
+
+QTableView::indicator:checked {
+    image:url(:/Gen2WGMTFTester/images/Table/checkbox_checked.png);
+}
+
+QTableView::indicator:checked:disabled {
+    image:url(:/Gen2WGMTFTester/images/Table/checkbox_checked_disable.png);
+}
+
+QTableView::indicator:indeterminate {
+    image:url(:/Gen2WGMTFTester/images/Table/checkbox_parcial.png);
+}
+
+QTableView::indicator:indeterminate:disabled {
+    image:url(:/Gen2WGMTFTester/images/Table/checkbox_parcial_disable.png);
+}
+
+QTableView::item:selected {
+    color: #DCDCDC;
+    background: #383838;
+}
+
+QTableView::item:hover {
+    color: #DCDCDC;
+    background: #525252;
+}
+
+QTableView::item {
+    padding: 1px;
+    margin: 0px;
+    border: 0px;
+}
+
+/* 表格样式 */
+QTableView QLineEdit,
+QTableView QComboBox,
+QTableView QSpinBox,
+QTableView QDoubleSpinBox,
+QTableView QDateEdit,
+QTableView QTimeEdit,
+QTableView QDateTimeEdit {
+    border-width: 1px;
+    border-radius: 0px;
+}
+
+/* 选中表格后样式 (此处QLineEdit:focus生效) */
+QTableView QLineEdit:focus,
+QTableView QComboBox:focus,
+QTableView QSpinBox:focus,
+QTableView QDoubleSpinBox:focus,
+QTableView QDateEdit:focus,
+QTableView QTimeEdit:focus,
+QTableView QDateTimeEdit:focus {
+    background-color: #3fd4f2;
+    border-width: 3px;
+    border-radius: 5px;
+}
+
+/* 滚动条样式 */
+QScrollBar:horizontal {
+    background:#484848;
+    padding:0px;
+    border-radius:6px;
+    max-height:12px;
+}
+
+QScrollBar::handle:horizontal {
+    background:#242424;
+    min-width:50px;
+    border-radius:6px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background:#AAAAAA;
+}
+
+QScrollBar::handle:horizontal:pressed {
+    background:#AAAAAA;
+}
+
+QScrollBar::add-page:horizontal {
+    background:none;
+}
+
+QScrollBar::sub-page:horizontal {
+    background:none;
+}
+
+QScrollBar::add-line:horizontal {
+    background:none;
+}
+
+QScrollBar::sub-line:horizontal {
+    background:none;
+}
+
+QScrollBar:vertical{
+    background:#484848;
+    padding:0px;
+    border-radius:6px;
+    max-width:12px;
+}
+
+QScrollBar::handle:vertical{
+    background:#242424;
+    min-height:50px;
+    border-radius:6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background:#AAAAAA;
+}
+
+QScrollBar::handle:vertical:pressed {
+    background:#AAAAAA;
+}
+
+QScrollBar::add-page:vertical {
+    background:none;
+}
+
+QScrollBar::sub-page:vertical {
+    background:none;
+}
+
+QScrollBar::add-line:vertical {
+    background:none;
+}
+
+QScrollBar::sub-line:vertical {
+    background:none;
+}
+
+/* 表头样式 QTableCornerButton::section是tablewidget左上角那一小块 详见https://blog.csdn.net/qq_43627907/article/details/125677496 */
+QHeaderView, QHeaderView::section, QTableView QTableCornerButton::section {
+    color: #DCDCDC;
+    background: #525252;
+}
+
+QHeaderView::section, QTableCornerButton:section {
+    padding: 3px;
+    margin: 0px;
+    border: 1px solid #242424;
+    border-left-width: 0px;
+    border-right-width: 1px;
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+}
+
+QHeaderView::section:disabled {
+    background: #444444;
+    border-color: #484848;
+    color: #242424;
+}

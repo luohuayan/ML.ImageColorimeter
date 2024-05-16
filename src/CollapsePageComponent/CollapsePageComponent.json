@@ -1,0 +1,12 @@
+{
+    "Name" : "CollpasePagePlugin",
+	"PluginApplication": "true",
+    "Version" : "0.0.1",
+    "Vendor" : "MLO",
+    "Copyright" : "(C) MLO",
+    "License" : "Put short license information here",
+    "Description" : "Collapse the page up and down",
+    "Url" : "https://mloptic.com/",
+	"Dependencies" : [
+	]
+}

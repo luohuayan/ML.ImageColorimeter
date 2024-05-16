@@ -1,0 +1,20 @@
+# .clang-format
+#
+# This is for clang-format >= 5.0.
+#
+# [2] https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+#
+---
+Language: Cpp
+BasedOnStyle: Google
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+BreakStringLiterals: false
+DerivePointerAlignment: true
+PointerAlignment: Left
+ColumnLimit: 80
+IndentWidth: 4
+AccessModifierOffset: -3
+Standard: c++20
+TabWidth: 4
+UseTab: Never

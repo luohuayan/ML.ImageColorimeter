@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+***************************************************************************************************
+ Copyright (C) 2023 The Qt Company Ltd.
+ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+***************************************************************************************************
+-->
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{882AB95F-2287-4EA4-867F-415741F386E3}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\extlib\logplus;$(SolutionDir)src\extlib\logplus\include;$(SolutionDir)src\extlib\opencv4.5.1\build\include;$(SolutionDir)src\extlib\qwt\include;$(SolutionDir)src\extlib\mlcommon\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)src\extlib\logplus\lib\x64\bin.Debug_Unicode;$(SolutionDir)src\extlib\qwt\bin_debug;$(SolutionDir)src\extlib\opencv4.5.1\build\x64\vc15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world451d.lib;log4cplusUD.lib;qwtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(SolutionDir)src\extlib\qwt\bin_debug\qwtd.dll" $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy /y "$(TargetPath)"  "$(SolutionDir)$(Platform)\$(Configuration)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\extlib\mlcommon\include;$(SolutionDir)src\extlib\qwt\include;$(SolutionDir)src\extlib\opencv4.5.1\build\include;$(SolutionDir)src\extlib\logplus\include;$(SolutionDir)src\extlib\logplus;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)src\extlib\opencv4.5.1\build\x64\vc15\lib;$(SolutionDir)src\extlib\logplus\lib\x64\bin.Release_Unicode;$(SolutionDir)src\extlib\qwt\bin_release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world451.lib;log4cplusU.lib;qwt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(SolutionDir)src\extlib\qwt\bin_release\qwt.dll" $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy /y "$(TargetPath)"  "$(SolutionDir)$(Platform)\$(Configuration)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>IMAGEVIEWER_LIB;QWT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MinSpace</Optimization>
+      <PreprocessorDefinitions>IMAGEVIEWER_LIB;QWT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="bpointitem.cpp" />
+    <ClCompile Include="bqgraphicsitem.cpp" />
+    <ClCompile Include="bqgraphicsscene.cpp" />
+    <ClCompile Include="colorMap.cpp" />
+    <ClCompile Include="cropper.cpp" />
+    <ClCompile Include="ImageViewerLogic.cpp" />
+    <ClCompile Include="ImageViewerStructure.cpp" />
+    <ClCompile Include="ImageViewerWidget.cpp" />
+    <ClCompile Include="LineCutWindow.cpp" />
+    <ClCompile Include="MLGraphicsView.cpp" />
+    <ClCompile Include="MLImageTransformHelper.cpp" />
+    <ClCompile Include="PlotLines.cpp" />
+    <ClCompile Include="StateMachine.cpp" />
+    <QtMoc Include="bpointitem.h" />
+    <QtMoc Include="bqgraphicsitem.h" />
+    <QtMoc Include="bqgraphicsscene.h" />
+    <QtMoc Include="PlotLines.h" />
+    <QtMoc Include="colorMap.h" />
+    <ClInclude Include="StateMachine.h" />
+    <ClCompile Include="RoiSetting.cpp" />
+    <QtMoc Include="RoiSetting.h" />
+    <QtMoc Include="LineCutWindow.h" />
+    <ClCompile Include="resizer.cpp" />
+    <QtMoc Include="cropper.hpp" />
+    <ClInclude Include="defines.hpp" />
+    <ClInclude Include="GridItem.h" />
+    <ClInclude Include="MLImageTransformHelper.h" />
+    <QtMoc Include="resizer.hpp" />
+    <QtMoc Include="MLGraphicsView.h" />
+    <QtMoc Include="ImageViewerLogic.h" />
+    <ClInclude Include="ImageViewerStructure.h" />
+    <QtMoc Include="ImageViewerWidget.h" />
+    <ClInclude Include="imageviewer_global.h" />
+    <QtMoc Include="ImageViewer.h" />
+    <ClCompile Include="ImageViewer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="ImageViewerWidget.ui" />
+    <QtUic Include="LineCutWindow.ui" />
+    <QtUic Include="RoiSetting.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="ImageViewer.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LoggingWrapper\LoggingWrapper.vcxproj">
+      <Project>{ee0b2cf2-e1aa-4a92-8245-beb6c1d06473}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

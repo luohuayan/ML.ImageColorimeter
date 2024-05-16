@@ -1,0 +1,91 @@
+{
+	"FilterConvertMap": [
+		{
+			"Name": "ND",
+			"Map":[
+			{
+				"Name": "ND0",
+				"Channel": 0
+			},
+			{
+				"Name": "Empty",
+				"Channel": 1
+			},
+			{
+				"Name": "ND1",
+				"Channel": 2
+			}
+			]
+		},
+		{
+			"Name": "XYZ",
+			"Map":[
+			{
+				"Name": "X",
+				"Channel": 0
+			},
+			{
+				"Name": "Y",
+				"Channel": 1
+			},
+			{
+				"Name": "Z",
+				"Channel": 2
+			},
+			{
+				"Name": "Empty",
+				"Channel": 3
+			},
+			{
+				"Name": "Block",
+				"Channel": 4
+			}
+			]
+		},
+		{
+			"Name": "Cylinder",
+			"Map":[
+			{
+				"Name": "NoRxLens",
+				"Channel": 0
+			},
+			{
+				"Name": "0-100",
+				"Channel": 1
+			},
+			{
+				"Name": "0-0.25",
+				"Channel": 2
+			},
+			{
+				"Name": "0-0.5",
+				"Channel": 2
+			},
+			{
+				"Name": "0-0.75",
+				"Channel": 3
+			},
+			{
+				"Name": "0-1",
+				"Channel": 3
+			},
+			{
+				"Name": "0-1.25",
+				"Channel": 4
+			},
+			{
+				"Name": "0-1.5",
+				"Channel": 4
+			},
+			{
+				"Name": "0-1.75",
+				"Channel": 5
+			},
+			{
+				"Name": "0-2",
+				"Channel": 6
+			}
+			]
+		}
+	]
+}

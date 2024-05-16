@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F00DD6C3-3BB8-4B32-9C4F-776977256B91}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+    <ProjectName>MeasureCamera</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>msvc2019_64</QtInstall>
+    <QtBuildConfig>debug</QtBuildConfig>
+    <QtModules>core;gui;widgets;concurrent</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets;concurrent</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)MeasureCamera.json" $(SolutionDir)$(Platform)\$(Configuration)\ /Y
+xcopy /y "$(TargetPath)"  "$(SolutionDir)$(Platform)\$(Configuration)"
+xcopy /y "$(SolutionDir)src\extlib\opencv4.5.1\build\x64\vc15\bin_\opencv_world451d.dll" $(SolutionDir)$(Platform)\$(Configuration)\</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\PluginCore;$(SolutionDir)src\CollapsePageComponent;$(SolutionDir)src\ImageViewer;$(SolutionDir)src\NavigationBar;$(SolutionDir)src\LoggingWrapper;$(SolutionDir)src\MLBusinessManage;$(SolutionDir)src\extlib\opencv4.5.1\build\include;$(SolutionDir)src\extlib\logplus;$(SolutionDir)src\extlib\logplus\include;$(SolutionDir)src\extlib\json4moderncpp;$(SolutionDir)src\extlib\mlcommon\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)src\extlib\mlcommon\$(Configuration);$(SolutionDir)src\extlib\opencv4.5.1\build\x64\vc15\lib;$(SolutionDir)src\extlib\logplus\lib\x64\bin.Debug_Unicode;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world451d.lib;log4cplusUD.lib;VimbaImageTransform.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)MeasureCamera.json" $(SolutionDir)$(Platform)\$(Configuration)\ /Y
+xcopy /y "$(TargetPath)"  "$(SolutionDir)$(Platform)\$(Configuration)"
+xcopy /y "$(SolutionDir)src\extlib\opencv4.5.1\build\x64\vc15\bin_\opencv_world451.dll" $(SolutionDir)$(Platform)\$(Configuration)\</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\PluginCore;$(SolutionDir)src\CollapsePageComponent;$(SolutionDir)src\ImageViewer;$(SolutionDir)src\NavigationBar;$(SolutionDir)src\LoggingWrapper;$(SolutionDir)src\MLBusinessManage;$(SolutionDir)src\extlib\opencv4.5.1\build\include;$(SolutionDir)src\extlib\mlcommon\include;$(SolutionDir)src\extlib\json4moderncpp;$(SolutionDir)src\extlib\logplus;$(SolutionDir)src\extlib\logplus\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opencv_world451.lib;log4cplusU.lib;VimbaImageTransform.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)src\extlib\opencv4.5.1\build\x64\vc15\lib;$(SolutionDir)src\extlib\logplus\lib\x64\bin.Release_Unicode;$(SolutionDir)src\extlib\mlcommon\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>MEASURECAMERA_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>MEASURECAMERA_LIB;QWT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ImageViewer\MLImageTransformHelper.cpp" />
+    <ClCompile Include="MLCameraShow.cpp" />
+    <ClCompile Include="MeasureCameraWidget.cpp" />
+    <ClInclude Include="..\ImageViewer\MLImageTransformHelper.h" />
+    <QtMoc Include="MLCameraShow.h" />
+    <ClInclude Include="MeasureCameraPlugin.h" />
+    <QtMoc Include="MeasureCameraWidget.h" />
+    <ClInclude Include="measure_global.h" />
+    <QtMoc Include="MeasureCamera.h" />
+    <ClCompile Include="MeasureCamera.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="MeasureCameraWidget.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageViewer\ImageViewer.vcxproj">
+      <Project>{882ab95f-2287-4ea4-867f-415741f386e3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\LoggingWrapper\LoggingWrapper.vcxproj">
+      <Project>{ee0b2cf2-e1aa-4a92-8245-beb6c1d06473}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\MLBusinessManage\MLBusinessManage.vcxproj">
+      <Project>{90cf71eb-1774-4875-81d5-56cb998e7612}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PluginCore\PluginCore.vcxproj">
+      <Project>{841f4376-cd91-42da-8f31-c0f376e2e303}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

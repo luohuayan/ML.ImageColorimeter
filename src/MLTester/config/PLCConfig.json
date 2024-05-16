@@ -1,0 +1,22 @@
+{
+  "Connection": {
+    "IpAddress": "192.168.0.1",
+    "Rock": 0,
+    "Solt": 1
+  }, 
+  "DataBaseNumber":7,
+  "tip/tilt":{
+	"Axis1_offset_Enable": "0.0",
+	"Axis1_offset_Stop": "0.1",
+	"Axis1_offset_Speed": "2.0",
+	"Axis1_offset_Mov": "4.0",
+	"Axis1_offset_Pos": "6.0",
+	"Axis1_offset_Busy": "8.1",
+	"Axis2_offset_Enable": "10.0",
+	"Axis2_offset_Stop": "10.1",
+	"Axis2_offset_Speed": "12.0",
+	"Axis2_offset_Mov": "14.0",
+	"Axis2_offset_Pos": "16.0",
+	"Axis2_offset_Busy": "18.1"
+  }
+}

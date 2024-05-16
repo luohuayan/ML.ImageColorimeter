@@ -1,0 +1,20 @@
+{
+    "InstrumentSerialNumber": "MLM21420104M",
+    "Modules": [
+        {
+            "ModuleName": "LeftEye-from-rear",
+            "SerialNumber": "MLM21420102L",
+            "Aperture": "3mm",
+            "ConnectAddress": {
+                "LensMotion": "R232DaisyChain/COM15-1/Axis-1",
+                "CameraMotion": "R232DaisyChain/COM15-2/Axis-1",
+                "Filter": "COM13",
+                "CylindricalMirror": "COM8/CBR_9600",
+                "Camera": "DEV0"
+            }
+        }
+    ],
+    "IPDMotion": {
+        "ConnectAddr": "R232DaisyChain/COM45-5/Axis-1"
+    }
+}

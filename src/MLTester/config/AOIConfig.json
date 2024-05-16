@@ -1,0 +1,42 @@
+{
+    "AOIs": {
+        "C_AOI1#": {
+            "height": 406,
+            "width": 406,
+            "x": 2705,
+            "y": 2789
+        },
+        "C_AOI2#": {
+            "height": 406,
+            "width": 406,
+            "x": 3609,
+            "y": 2761
+        },
+        "C_AOI3#": {
+            "height": 406,
+            "width": 406,
+            "x": 4529,
+            "y": 2823
+        },
+        "R_AOI1#": {
+            "height": 324,
+            "width": 310,
+            "x": 2758,
+            "y": 1887
+        },
+        "R_AOI2#": {
+            "height": 324,
+            "width": 310,
+            "x": 3690,
+            "y": 1909
+        },
+        "R_AOI3#": {
+            "height": 324,
+            "width": 310,
+            "x": 4588,
+            "y": 1920
+        }
+    },
+    "FocusLength": 37.78,
+    "ROIcenterOffset": 40
+}

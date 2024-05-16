@@ -1,0 +1,10 @@
+{
+	"InstrumentSerialNumber": "MLM21420104M",
+	"IPDMotion":{
+		"Enable": 1,
+		"ReferencePosition": 23,
+		"RangeMax": 74,
+		"RangeMin": 47.6,
+		"IPDSpeed": 0.2
+	}
+}

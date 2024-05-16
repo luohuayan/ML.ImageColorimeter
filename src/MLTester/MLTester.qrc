@@ -1,0 +1,53 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>images/logo/ShowBackground.png</file>
+        <file>images/fiducial/eyeBoxScan.jpg</file>
+        <file>images/routine/startup.png</file>
+        <file>images/motionControl/top.png</file>
+        <file>images/motionControl/right.png</file>
+        <file>images/motionControl/down.png</file>
+        <file>images/motionControl/left.png</file>
+        <file>images/motionControl/stop.png</file>
+        <file>images/motionControl/tipTilt.png</file>
+        <file>images/routine/configFile.png</file>
+        <file>images/Table/checkbox_unchecked.png</file>
+        <file>images/Table/checkbox_checked.png</file>
+        <file>images/Table/checkbox_checked_disable.png</file>
+        <file>images/Table/checkbox_parcial.png</file>
+        <file>images/Table/checkbox_parcial_disable.png</file>
+        <file>images/Table/checkbox_unchecked_disable.png</file>
+        <file>images/routine/folderIn.png</file>
+        <file>images/routine/folderOut.png</file>
+        <file>images/logo/mlico1.ico</file>
+        <file>images/routine/clear.png</file>
+        <file>images/routine/log.png</file>
+        <file>images/routine/IQ.png</file>
+        <file>images/routine/MTF.png</file>
+        <file>images/routine/right_arrow.png</file>
+        <file>images/routine/right_arrow_down.png</file>
+        <file>images/routine/left_arrow_disabled.png</file>
+        <file>images/routine/right_arrow_disabled.png</file>
+        <file>images/routine/connect.png</file>
+        <file>images/routine/disconnect.png</file>
+        <file>images/routine/loadROI.png</file>
+        <file>images/routine/calibration.png</file>
+        <file>images/routine/switch.png</file>
+        <file>images/routine/recipe.png</file>
+        <file>images/routine/up_arrow.png</file>
+        <file>images/routine/add.png</file>
+        <file>images/routine/delete.png</file>
+        <file>images/routine/down_arrow.png</file>
+        <file>images/routine/sidebar.png</file>
+        <file>images/routine/spread.png</file>
+        <file>images/routine/search.png</file>
+        <file>images/routine/clearText.png</file>
+        <file>images/routine/temp.png</file>
+        <file>images/routine/edit.png</file>
+        <file>images/routine/back.png</file>
+        <file>images/routine/front.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>qss/MTFMeasureStyle.qss</file>
+        <file>css/style.css</file>
+    </qresource>
+</RCC>

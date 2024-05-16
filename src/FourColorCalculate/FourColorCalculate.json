@@ -1,0 +1,15 @@
+{
+    "Name" : "FourColorPlugin",
+	"PluginApplication": "true",
+    "Version" : "0.0.1",
+    "Vendor" : "MLO",
+    "Copyright" : "(C) MLO",
+    "License" : "Put short license information here",
+    "Description" : "four color control",
+    "Url" : "https://mloptic.com/",
+	"Dependencies" : [
+		{ "Name" : "MLBusinessManagePlugin"},
+		{ "Name" : "FilterWheelPlugin"},
+		{ "Name" : "MeasureCameraPlugin"}
+	]
+}

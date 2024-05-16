@@ -1,0 +1,12 @@
+{
+    "Name" : "CameraControlPlugin",
+	"PluginApplication": "true",
+    "Version" : "0.0.1",
+    "Vendor" : "MLO",
+    "Copyright" : "(C) MLO",
+    "License" : "Put short license information here",
+    "Description" : "camera interface control",
+    "Url" : "https://mloptic.com/",
+	"Dependencies" : [
+	]
+}

@@ -1,0 +1,14 @@
+{
+    "Name" : "MenuBarPlugin",
+	"PluginApplication": "true",
+    "Version" : "0.0.1",
+    "Vendor" : "MLO",
+    "Copyright" : "(C) MLO",
+    "License" : "Put short license information here",
+    "Description" : "menu bar show",
+    "Url" : "https://mloptic.com/",
+	"Dependencies" : [
+		{"Name":"TabBarPlugin"},
+		{"Name":"ConfigurationPlugin"}
+	]
+}

@@ -1,0 +1,11 @@
+{
+    "Motion3D_load": {
+        "X": 100,
+        "Y": 100,
+		"Z": 100
+    },
+	"AngleRange":12,
+	"AdjustTimesMax":5,
+	"PulseConversionAngle_X":0.70303334,
+	"PulseConversionAngle_Y":1.041413755
+}
